@@ -68,7 +68,8 @@ if user_menu == 'Medal Tally':
     st.title(f"🎖️ Medal Tally for {selected_year} | {selected_country}")
     medal_tally = helper.fetch_medal_tally(df, selected_year, selected_country)
     st.table(medal_tally.style.set_table_styles(
-        [{'selector': 'th', 'props': [('background-color', '#FFD700'), ('color', 'white'), ('font-weight', 'bold')]}]
+        [{'selector': 'th', 'props': [('background-color', '#FFD700'), ('color', 'white'), ('font-weight', 'bold')]},
+        {'selector': 'td', 'props': [('color', 'white'), ('background-color', '#2E2E2E')]} ]
     ))
 
 # Overall Analysis Section
