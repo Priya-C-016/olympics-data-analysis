@@ -55,21 +55,21 @@ Clone the repository:
 git clone https://github.com/your-username/olympic-data-analysis.git
 
 Navigate to the project directory:
-
+```bash
 cd olympic-data-analysis
-
+```
 Install dependencies:
-
+```
 pip install -r requirements.txt
-
+```
 Run the analysis script or interactive dashboard:
-
+```
 streamlit run app.py
-
+```
 OR, for Jupyter Notebook users:
-
+```
 jupyter notebook
-
+```
 ### 📈 Insights Gained
 
 The United States and China have consistently been top medal-winning countries.
