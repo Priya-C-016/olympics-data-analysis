@@ -4,6 +4,10 @@
 
 The Olympic Data Analysis App is a data-driven project that explores 120 years of Olympic history using data visualization techniques. The app cleans, processes, and analyzes historical Olympic data to extract meaningful insights about athletes, countries, sports, and trends in the Olympics over time.
 
+
+
+![Alt Text](Dashboard.png)
+
 ### 🔍 Features
 
 Data Cleaning & Preprocessing: Handled missing values, duplicates, and inconsistent data.
@@ -19,6 +23,11 @@ Athlete Performance Insights: Identified the most successful athletes and their 
 Gender Participation Trends: Explored the evolution of gender participation in the Olympics.
 
 Medal Distribution: Analyzed medal-winning patterns across various Olympic events.
+
+![Alt Text](data.png)
+
+![Alt Text](data2.png)
+
 
 ### 📊 Technologies Used
 
