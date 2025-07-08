@@ -175,18 +175,18 @@ elif user_menu == 'Athlete-wise Analysis':
          avg_ages.append(avg_age)
          sports.append(sport)
 
-     fig = go.Figure(data=[
-       go.Bar(x=sports, y=avg_ages, marker_color='gold')
-     ])
+    fig = go.Figure(data=[
+        go.Bar(x=sports, y=avg_ages, marker_color='gold')
+    ])
 
     fig.update_layout(
-    title='Average Age of Gold Medalists by Sport',
-    xaxis_title='Sport',
-    yaxis_title='Average Age',
-    xaxis_tickangle=-45,
-    height=700,
-    width=1000
-     )
+     title='Average Age of Gold Medalists by Sport',
+     xaxis_title='Sport',
+     yaxis_title='Average Age',
+     xaxis_tickangle=-45,
+     height=700,
+     width=1000
+    )
 
     st.plotly_chart(fig)
 
