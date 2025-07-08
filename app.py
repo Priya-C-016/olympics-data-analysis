@@ -149,21 +149,45 @@ elif user_menu == 'Athlete-wise Analysis':
     st.plotly_chart(fig)
      # Age Distribution wrt Sports (Gold Medalists)
     st.subheader("Distribution of Age wrt Sports (Gold Medalist)")
-    x = []
-    name = []
+    # x = []
+    # name = []
     famous_sports = ['Basketball', 'Judo', 'Football', 'Tug-Of-War', 'Athletics', 'Swimming', 'Badminton', 
                      'Sailing', 'Gymnastics', 'Art Competitions', 'Handball', 'Weightlifting', 'Wrestling',
                      'Water Polo', 'Hockey', 'Rowing', 'Fencing', 'Shooting', 'Boxing', 'Taekwondo', 'Cycling',
                      'Diving', 'Canoeing', 'Tennis', 'Golf', 'Softball', 'Archery', 'Volleyball', 
                      'Synchronized Swimming', 'Table Tennis', 'Baseball', 'Rhythmic Gymnastics', 'Rugby Sevens', 
                      'Beach Volleyball', 'Triathlon', 'Rugby', 'Polo', 'Ice Hockey']
-    for sport in famous_sports:
-        temp_df = athlete_df[athlete_df['Sport'] == sport]
-        x.append(temp_df[temp_df['Medal'] == 'Gold']['Age'].dropna())
-        name.append(sport)
+    # for sport in famous_sports:
+    #     temp_df = athlete_df[athlete_df['Sport'] == sport]
+    #     x.append(temp_df[temp_df['Medal'] == 'Gold']['Age'].dropna())
+    #     name.append(sport)
 
-    fig = ff.create_distplot(x, name, show_hist=False, show_rug=False)
-    fig.update_layout(autosize=False, width=1000, height=600)
+    # fig = ff.create_distplot(x, name, show_hist=False, show_rug=False)
+    # fig.update_layout(autosize=False, width=1000, height=600)
+    # st.plotly_chart(fig)
+    avg_ages = []
+    sports = []
+
+    for sport in famous_sports:
+       temp_df = athlete_df[(athlete_df['Sport'] == sport) & (athlete_df['Medal'] == 'Gold')]
+       if not temp_df['Age'].dropna().empty:
+         avg_age = temp_df['Age'].dropna().mean()
+         avg_ages.append(avg_age)
+         sports.append(sport)
+
+     fig = go.Figure(data=[
+       go.Bar(x=sports, y=avg_ages, marker_color='gold')
+     ])
+
+    fig.update_layout(
+    title='Average Age of Gold Medalists by Sport',
+    xaxis_title='Sport',
+    yaxis_title='Average Age',
+    xaxis_tickangle=-45,
+    height=700,
+    width=1000
+     )
+
     st.plotly_chart(fig)
 
     # Height vs Weight scatter plot
